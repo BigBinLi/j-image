@@ -14,5 +14,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
-          source-repo: "git@github.com:${{ github.repository }}.git"
-          destination-repo: "git@gitee.com:${{ secrets.GITEE_USER }}/${{ github.event.repository.name }}.git"
+          # 【修改这里】把 git@github.com 改为 https://github.com
+          source-repo: "https://github.com/BigBinLi/j-image.git"
+          # 下面这行保持不变（Gitee 必须用 SSH）
+          destination-repo: "git@gitee.com:simiyu/j-image.git"
